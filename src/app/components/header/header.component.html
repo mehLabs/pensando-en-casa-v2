@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <button
+    mat-icon-button
+    (click)="sidebar.toggle()"
+    aria-label="button with menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="spacer"></span>
+  <h1>{{ title }}</h1>
+  <span class="spacer"></span>
+  <button mat-icon-button type="button" aria-label="button with login icon">
+    <mat-icon>login</mat-icon>
+  </button>
+  <button
+    mat-icon-button
+    type="button"
+    class="favorite-icon"
+    aria-label="button with bag icon"
+  >
+    <mat-icon>shopping_bag</mat-icon>
+  </button>
+</mat-toolbar>

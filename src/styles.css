@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import url(app/theme/theme.css); */
+
+:root {
+  --border-color: #9b8f80;
+  --border: var(--border-color) solid 1px;
+  --text: #ffddb6;
+  --color1: #e6c535;
+  --color2: #e6a835;
+  --color3: #c28e2c;
+  --color4: #a27e3c;
+  --color5: #2a1800;
+  --color5-to-dark: linear-gradient(
+    90deg,
+    rgba(75, 59, 31, 1) 0%,
+    rgba(118, 88, 48, 1) 100%
+  );
+}
+
+body {
+  background: var(--color5);
+  color: var(--text);
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.no-bg {
+  background: transparent !important;
+}
+.borderc {
+  border-color: var(--border-color);
+}
