@@ -1,7 +1,54 @@
-<div class="">
+<div class="max-h-screen flex flex-wrap">
   <img
-    class="center-img"
-    src="../../../assets/house.png"
-    aria-label="House illustration"
+    src="../../../assets/solid-wood-furniture-manufacturer.jpg"
+    class="max-h-screen-5 w-full object-cover"
   />
+  <button
+    mat-raised-button
+    color="primary"
+    class="slighly-up ml-12 text-3xl lg:text-5xl sm:h-17 lg:h-20 appear modern"
+  >
+    <span>Ver catálogo</span> <mat-icon>arrow_forward_ios</mat-icon>
+  </button>
+  <span class="lg:text-7xl text-3xl sm:text-4xl text cursive subtitle"
+    >{{ subtitle }}<span class="animate-flicker">|</span></span
+  >
+  <span class="sm:text-5xl lg:text-9xl text cursive pec appear"
+    >Pensando en casa</span
+  >
+</div>
+<div class="container mx-auto translate-y-4 md:-translate-y-12">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+    <mat-card class="example-card" *ngFor="let article of firstThree(articles)">
+      <mat-card-header>
+        <mat-card-subtitle>{{ article.subtitle }}</mat-card-subtitle>
+        <mat-card-title>{{ article.title }}</mat-card-title>
+      </mat-card-header>
+      <img
+        class="object-contain"
+        mat-card-image
+        height="336"
+        [src]="article.img"
+        alt="Photo of a Shiba Inu"
+      />
+      <mat-card-content>
+        <p class="text-black">{{ article.description }}</p>
+        <mat-divider></mat-divider>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="accent">Comprar</button>
+        <button mat-button>Compartir</button>
+      </mat-card-actions>
+      <mat-card-footer>
+        <!-- <mat-progress-bar mode="indeterminate"></mat-progress-bar> -->
+      </mat-card-footer>
+    </mat-card>
+  </div>
+</div>
+<div class="container mx-auto mt-8 mb-4">
+  <div class="flex justify-between items-center px-2">
+    <h4>Más vendidos</h4>
+    <button mat-button color="accent" class="text">Ver más</button>
+  </div>
+  <app-carousel [incommingArticles]="articles"></app-carousel>
 </div>

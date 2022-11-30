@@ -1,0 +1,57 @@
+<div class="flex">
+  <div class="carousel grid w-8/12">
+    <mat-card
+      class="card border-r-border border-r-2"
+      *ngFor="let article of articles; index as index"
+      [ngClass]="index === 0 && move ? 'dissapear' : ''"
+      [ngClass]="index === articles.length - 1 ? 'appear' : ''"
+      [ngStyle]="
+        move
+          ? {
+              'z-index': 100 - index,
+              transition: '1s',
+              transform:
+                'translate(' +
+                (index - 1) * 40 +
+                'px, ' +
+                (index - 1) * 5 +
+                'px)'
+            }
+          : {
+              'z-index': 100 - index,
+              transform: 'translate(' + index * 40 + 'px, ' + index * 5 + 'px)'
+            }
+      "
+    >
+      <mat-card-header>
+        <mat-card-subtitle>{{ article.subtitle }}</mat-card-subtitle>
+        <mat-card-title>{{ article.title }}</mat-card-title>
+      </mat-card-header>
+      <img
+        [ngClass]="sm ? 'object-cover' : 'object-contain'"
+        mat-card-image
+        [height]="mobile ? 150 : 336"
+        [src]="article.img"
+        alt="Photo of a Shiba Inu"
+      />
+      <mat-card-content>
+        <p class="text-black" *ngIf="!sm">{{ article.description }}</p>
+        <mat-divider></mat-divider>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="accent">Comprar</button>
+        <button mat-button>Compartir</button>
+      </mat-card-actions>
+      <mat-card-footer>
+        <!-- <mat-progress-bar mode="indeterminate"></mat-progress-bar> -->
+      </mat-card-footer>
+    </mat-card>
+  </div>
+  <button
+    mat-fab
+    class="arrow my-auto mr-auto scale-150 z-[200]"
+    (click)="nextItem()"
+  >
+    <mat-icon>arrow_forward_ios</mat-icon>
+  </button>
+</div>

@@ -8,9 +8,11 @@ import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './modules/shared/shared.module';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { CarouselComponent } from './pages/main/components/carousel/carousel.component';
 
 @NgModule({
-  declarations: [AppComponent, MainComponent, HeaderComponent, SidebarComponent],
+  declarations: [AppComponent, MainComponent, HeaderComponent, SidebarComponent, FooterComponent, CarouselComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

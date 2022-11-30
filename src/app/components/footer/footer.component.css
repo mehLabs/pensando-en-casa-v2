@@ -1,0 +1,6 @@
+.center-img {
+  width: 100%;
+}
+.border {
+  border-top: var(--border);
+}

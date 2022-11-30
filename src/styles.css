@@ -1,8 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 /* @import url(app/theme/theme.css); */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --border-color: #9b8f80;
+  --modern-font: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   --border: var(--border-color) solid 1px;
   --text: #ffddb6;
   --color1: #e6c535;
@@ -15,6 +19,15 @@
     rgba(75, 59, 31, 1) 0%,
     rgba(118, 88, 48, 1) 100%
   );
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: var(--text);
 }
 
 body {
@@ -36,4 +49,10 @@ body {
 }
 .borderc {
   border-color: var(--border-color);
+}
+.cursive {
+  font-family: "Lobster", cursive;
+}
+.text {
+  color: var(--text);
 }

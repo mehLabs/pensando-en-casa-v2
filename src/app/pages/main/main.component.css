@@ -1,3 +1,70 @@
-.center-img {
-  width: 100vw;
+.brightness-shadow {
+  filter: drop-shadow(0 0 5px var(--text));
+}
+.bg-furniture {
+  background-image: url("src/assets/solid-wood-furniture-manufacturer.jpg");
+  background-size: cover;
+}
+.pec {
+  z-index: 99;
+  position: absolute;
+  top: 15vw;
+  left: 3rem;
+}
+.appear {
+  animation: appear 6s forwards;
+}
+.subtitle {
+  position: absolute;
+  top: calc(15vw - 4.5rem);
+  left: 3rem;
+}
+.slighly-up {
+  position: absolute;
+  top: 40vw;
+}
+.modern {
+  font-family: sans-serif;
+}
+
+@keyframes flickerAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.animate-flicker {
+  animation: flickerAnimation 0.6s infinite;
+}
+.max-h-screen-5 {
+  max-height: calc(100vh - 64px);
+}
+
+@media (max-width: 550px) {
+  .slighly-up {
+    position: absolute;
+    top: 40vw;
+  }
+  .pec {
+    top: 100px;
+  }
+  .subtitle {
+    top: 25px;
+  }
 }
