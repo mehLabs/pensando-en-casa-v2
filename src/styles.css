@@ -56,3 +56,6 @@ body {
 .text {
   color: var(--text);
 }
+.bottom-border {
+  border: 0 0 2px 0 solid white;
+}

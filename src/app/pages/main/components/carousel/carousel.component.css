@@ -13,6 +13,9 @@
 .appear {
   animation: appear 1s forwards;
 }
+.first {
+  box-shadow: -2px 0 5px 0 rgba(0, 0, 0, 0.484);
+}
 
 @keyframes appear {
   0% {

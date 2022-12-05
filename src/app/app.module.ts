@@ -10,9 +10,20 @@ import { SharedModule } from './modules/shared/shared.module';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CarouselComponent } from './pages/main/components/carousel/carousel.component';
+import { LoginComponent } from './pages/login/login.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, MainComponent, HeaderComponent, SidebarComponent, FooterComponent, CarouselComponent],
+  declarations: [
+    AppComponent,
+    MainComponent,
+    HeaderComponent,
+    SidebarComponent,
+    FooterComponent,
+    CarouselComponent,
+    LoginComponent,
+    PageNotFoundComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

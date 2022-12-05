@@ -7,11 +7,18 @@
     <mat-icon>menu</mat-icon>
   </button>
   <span class="spacer"></span>
-  <h1>{{ title }}</h1>
+  <a class="no-underline" routerLink="/">
+    <h1>{{ title }}</h1>
+  </a>
   <span class="spacer"></span>
-  <button mat-icon-button type="button" aria-label="button with login icon">
+  <a
+    mat-icon-button
+    type="button"
+    aria-label="button with login icon"
+    routerLink="/login"
+  >
     <mat-icon>login</mat-icon>
-  </button>
+  </a>
   <button
     mat-icon-button
     type="button"

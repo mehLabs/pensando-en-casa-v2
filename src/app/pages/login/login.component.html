@@ -1,0 +1,35 @@
+<div class="">
+  <div class="container mx-auto">
+    <div class="mx-4">
+      <form class="flex flex-col" (submit)="submit($event)">
+        <h2 class="cursive text-center">Inicio de sesión</h2>
+
+        <mat-form-field appearance="outline" color="accent">
+          <mat-label class="label">Correo electrónico</mat-label>
+          <input
+            color="accent"
+            matNativeControl
+            aria-label="correo electrónico"
+          />
+        </mat-form-field>
+        <mat-form-field
+          class="bottom-outline"
+          appearance="outline"
+          color="accent"
+        >
+          <mat-label class="label">Contraseña</mat-label>
+          <input matNativeControl aria-label="contraseña" />
+        </mat-form-field>
+        <button type="submit" color="accent" class="mb-4" mat-raised-button>
+          Iniciar sesión
+        </button>
+      </form>
+      <p>
+        ¿No tienes una cuenta?
+        <a routerLink="/register" class="text-white"
+          >Haz click aquí para crear una <span>nueva cuenta</span></a
+        >
+      </p>
+    </div>
+  </div>
+</div>
