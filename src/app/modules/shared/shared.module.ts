@@ -41,9 +41,13 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
+import { ArsCurrencyPipe } from 'src/app/pipes/ars-currency.pipe';
+import { YesNoPipe } from 'src/app/pipes/yes-no.pipe';
+
+// Pipes
 
 @NgModule({
-  declarations: [],
+  declarations: [ArsCurrencyPipe, YesNoPipe],
   imports: [
     CommonModule,
     MatAutocompleteModule,
@@ -80,9 +84,11 @@ import { MatTableModule } from '@angular/material/table';
     MatTooltipModule,
     MatPaginatorModule,
     MatSortModule,
-    MatTableModule
+    MatTableModule,
   ],
   exports: [
+    YesNoPipe,
+    ArsCurrencyPipe,
     MatAutocompleteModule,
     MatCheckboxModule,
     MatDatepickerModule,
@@ -117,7 +123,7 @@ import { MatTableModule } from '@angular/material/table';
     MatTooltipModule,
     MatPaginatorModule,
     MatSortModule,
-    MatTableModule
-  ]
+    MatTableModule,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

@@ -5,9 +5,20 @@ import { MainComponent } from './pages/main/main.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent, data: { animation: 'One' } },
-  { path: '', component: MainComponent, data: { animation: 'Two' } },
-  { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
+  { path: 'login', component: LoginComponent, data: { animation: 'ToRight' } },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./modules/admin/admin.module').then((m) => m.AdminModule),
+    data: { animation: 'ToRight' },
+  },
+  { path: '', component: MainComponent, data: { animation: 'Home' } },
+  {
+    path: '**',
+    pathMatch: 'full',
+    component: PageNotFoundComponent,
+    data: { animation: 'ToBottom' },
+  },
 ];
 
 @NgModule({

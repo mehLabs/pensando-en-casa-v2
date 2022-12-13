@@ -1,0 +1,8 @@
+.cavern {
+  position: absolute;
+  display: flex;
+  top: 0px;
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+}
