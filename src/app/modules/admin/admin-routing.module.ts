@@ -14,7 +14,7 @@ const routes: Routes = [
       {
         path: 'clients',
         component: ClientsListComponent,
-        data: { animation: 'First' },
+        data: { animation: 'Third' },
       },
       {
         path: 'inventory',
@@ -24,7 +24,7 @@ const routes: Routes = [
       {
         path: 'orders',
         component: OrdersListComponent,
-        data: { animation: 'Third' },
+        data: { animation: 'First' },
       },
     ],
   },

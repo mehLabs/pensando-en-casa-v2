@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
+import { ChildrenOutletContexts } from '@angular/router';
+import { adminTransitionAnimations } from './admin-transition-animations';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css'],
-  animations: [],
+  animations: [adminTransitionAnimations],
 })
 export class AdminComponent {
+  constructor(private contexts: ChildrenOutletContexts) {}
+
   links: any[] = [
     { title: 'Órdenes', link: 'orders', icon: 'local_shipping' },
     {
@@ -16,4 +20,10 @@ export class AdminComponent {
     },
     { title: 'Clientes', link: 'clients', icon: 'person_search' },
   ];
+
+  getRouteAnimationData() {
+    return this.contexts.getContext('primary')?.route?.snapshot?.data?.[
+      'animation'
+    ];
+  }
 }
