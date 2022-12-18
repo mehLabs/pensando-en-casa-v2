@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // Material Form Controls
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -49,6 +51,7 @@ import { YesNoPipe } from 'src/app/pipes/yes-no.pipe';
 @NgModule({
   declarations: [ArsCurrencyPipe, YesNoPipe],
   imports: [
+    FormsModule,
     CommonModule,
     MatAutocompleteModule,
     MatCheckboxModule,
@@ -85,6 +88,7 @@ import { YesNoPipe } from 'src/app/pipes/yes-no.pipe';
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,
+    ReactiveFormsModule,
   ],
   exports: [
     YesNoPipe,
@@ -124,6 +128,8 @@ import { YesNoPipe } from 'src/app/pipes/yes-no.pipe';
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
 })
 export class SharedModule {}

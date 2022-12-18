@@ -1,57 +1,49 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
-
-const orders = [
-  {
-    name: 'Hugo Iturrieta',
-    item: '2 zapatillas baratas',
-    amount: 6000,
-    address: 'Güemes 2751',
-    delivered: false,
-  },
-  {
-    name: 'Abril Carrari',
-    item: '1 camión de maquillaje',
-    amount: 600000,
-    address: 'Güemes 2751',
-    delivered: false,
-  },
-  {
-    name: 'Kiara (michi)',
-    item: '1 gato macho',
-    amount: 1000,
-    address: 'Güemes 2751',
-    delivered: false,
-  },
-  {
-    name: 'Mariano',
-    item: '400 logos diferentes',
-    amount: 1000000,
-    address: 'Alberti 29292',
-    delivered: false,
-  },
-];
+import {
+  MatTableDataSource,
+  MatTableDataSourcePaginator,
+} from '@angular/material/table';
+import { Order } from '../../models/order.model';
+import { AdminOrdersService } from '../../services/admin-orders.service';
 
 @Component({
   selector: 'app-orders-list',
   templateUrl: './orders-list.component.html',
   styleUrls: ['./orders-list.component.css'],
 })
-export class OrdersListComponent implements AfterViewInit {
+export class OrdersListComponent {
+  originalOrders: Order[];
+  orders: Order[];
+  ordersObject: Order[] = [];
+
+  constructor(private ordersService: AdminOrdersService) {
+    this.orders = [];
+    this.originalOrders = [];
+
+    ordersService.getOrders().subscribe((orders) => {
+      this.ordersObject = orders;
+      this.orders = orders.sort((o1, o2) =>
+        o1.name > o2.name ? 1 : o1.name < o2.name ? -1 : 0
+      );
+      this.originalOrders = this.orders;
+    });
+  }
+
   columnsToDisplay = ['name', 'item', 'address', 'amount', 'delivered'];
 
   @ViewChild(MatSort) sort: MatSort = new MatSort();
 
-  orders = new MatTableDataSource(
-    orders.sort((o1, o2) =>
-      o1.name > o2.name ? 1 : o1.name < o2.name ? -1 : 0
-    )
-  );
-
   sorting() {}
 
-  ngAfterViewInit(): void {
-    this.orders.sort = this.sort;
+  search(found: any[]) {
+    this.orders = this.originalOrders;
+    let ordersFiltered: Order[] = [];
+    found.forEach((id) => {
+      ordersFiltered.push(
+        this.orders.filter((order: Order) => order.id === id)[0]
+      );
+    });
+    this.orders = ordersFiltered;
   }
 }

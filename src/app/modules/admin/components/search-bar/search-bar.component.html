@@ -1,0 +1,18 @@
+<form>
+  <mat-form-field>
+    <mat-label>Buscar</mat-label>
+    <input
+      type="text"
+      placeholder="Buscar"
+      aria-label="buscar"
+      matInput
+      [formControl]="search"
+      [matAutocomplete]="auto"
+    />
+  </mat-form-field>
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let element of filteredWords | async" [value]="element">
+      {{ element }}
+    </mat-option>
+  </mat-autocomplete>
+</form>

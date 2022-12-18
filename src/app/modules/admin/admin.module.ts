@@ -8,6 +8,7 @@ import { OrdersListComponent } from './pages/orders-list/orders-list.component';
 import { ClientsListComponent } from './pages/clients-list/clients-list.component';
 
 import { SharedModule } from '../shared/shared.module';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { SharedModule } from '../shared/shared.module';
     InventoryListComponent,
     OrdersListComponent,
     ClientsListComponent,
+    SearchBarComponent,
   ],
   imports: [CommonModule, AdminRoutingModule, SharedModule],
 })
