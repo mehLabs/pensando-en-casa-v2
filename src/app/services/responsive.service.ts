@@ -12,9 +12,32 @@ export class ResponsiveService {
     window.innerWidth
   );
 
+  private showHeader: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    true
+  );
+
   isMobile(): Observable<boolean> {
     console.log(this.mobile.value);
     return this.mobile.asObservable();
+  }
+
+  isShowHeader(): Observable<boolean> {
+    return this.showHeader.asObservable();
+  }
+
+  hideHeader() {
+    this.showHeader.next(false);
+  }
+  doShowHeader() {
+    this.showHeader.next(true);
+  }
+
+  scrollUp() {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
   }
 
   constructor() {

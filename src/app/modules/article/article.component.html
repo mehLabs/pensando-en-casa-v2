@@ -1,0 +1,59 @@
+<a
+  routerLink="/"
+  class="absolute top-0 left-0 z-10"
+  color="primary"
+  mat-icon-button
+  aria-label="Volver"
+>
+  <mat-icon>arrow_back</mat-icon>
+</a>
+
+<div class="grid grid-cols-1 md:grid-cols-[1fr_200px]">
+  <div class="overflow-hidden w-full" *ngIf="article">
+    <div class="bg-white">
+      <div
+        class="bg-fixed bg-contain bg-no-repeat bg-top relative left-0 max-w-full h-96 md:h-screen z-0"
+        [style.background-image]="'url(' + article.img + ')'"
+      ></div>
+    </div>
+    <div
+      class="bg-neutral -translate-y-8 rounded-t-lg z-[11] relative pt-4 px-4 text-center"
+    >
+      <h2>{{ article.price | arsCurrency }}</h2>
+      <h3>{{ article.title }}</h3>
+      <p>
+        {{ article.description }}
+      </p>
+      <button mat-flat-button color="accent">
+        <mat-icon>credit_card</mat-icon>
+        COMPRAR
+      </button>
+    </div>
+  </div>
+  <aside
+    class="border-0 border-x border-solid border-border flex md:flex-col md:overflow-hidden overflow-x-scroll bg-white"
+  >
+    <mat-card
+      *ngFor="let article of articles"
+      class="border-r border-solid border-border mt-1 h-[200px]"
+    >
+      <a
+        class="no-decoration no-underline text-black flex flex-col overflow-hidden"
+        [routerLink]="'/article/' + article.id"
+      >
+        <mat-card-header>
+          <mat-card-subtitle> {{ article.subtitle }}</mat-card-subtitle>
+          <mat-card-title>{{ article.title }}</mat-card-title>
+        </mat-card-header>
+        <img
+          class="block object-top"
+          [ngClass]="sm ? 'object-cover' : 'object-contain'"
+          mat-card-image
+          [height]="mobile ? 150 : 150"
+          [src]="article.img"
+          alt="Photo of a Shiba Inu"
+        />
+      </a>
+    </mat-card>
+  </aside>
+</div>

@@ -13,6 +13,7 @@ module.exports = {
     extend: {
       colors: {
         border: "#9b8f80",
+        neutral: "#2a1800",
       },
     },
   },

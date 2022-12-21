@@ -12,6 +12,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CarouselComponent } from './pages/main/components/carousel/carousel.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { BagComponent } from './pages/bag/bag.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     CarouselComponent,
     LoginComponent,
     PageNotFoundComponent,
+    BagComponent,
   ],
   imports: [
     BrowserModule,

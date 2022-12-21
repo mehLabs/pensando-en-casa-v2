@@ -10,7 +10,7 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <div class="min-h-screen" [@routeAnimations]="getRouteAnimationData()">
-      <router-outlet></router-outlet>
+      <router-outlet (activate)="scrollUp()"></router-outlet>
     </div>
     <br />
     <app-footer></app-footer>

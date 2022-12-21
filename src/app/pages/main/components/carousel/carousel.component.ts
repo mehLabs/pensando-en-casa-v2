@@ -14,6 +14,7 @@ export class CarouselComponent implements OnInit {
   move: boolean = false;
   mobile: boolean = false;
   sm: boolean = false;
+  breakpoint: number = 320;
 
   constructor(private responsive: ResponsiveService) {}
 
@@ -23,7 +24,7 @@ export class CarouselComponent implements OnInit {
       this.mobile = isMobile;
     });
     this.responsive.innerWidth().subscribe((width) => {
-      if (width <= 320) {
+      if (width <= this.breakpoint) {
         this.sm = true;
       } else {
         this.sm = false;
@@ -32,6 +33,7 @@ export class CarouselComponent implements OnInit {
   }
 
   nextItem() {
+    console.log(this.articles.length);
     if (!this.move) {
       this.move = true;
       setTimeout(() => {

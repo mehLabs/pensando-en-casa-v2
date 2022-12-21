@@ -1,31 +1,33 @@
-<mat-toolbar color="primary">
-  <button
-    mat-icon-button
-    (click)="sidebar.toggle()"
-    aria-label="button with menu icon"
-  >
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span class="spacer"></span>
-  <a class="no-underline" routerLink="/">
-    <h1>{{ title }}</h1>
-  </a>
-  <span class="spacer"></span>
-  <a
-    mat-icon-button
-    type="button"
-    aria-label="button with login icon"
-    routerLink="/login"
-  >
-    <mat-icon>login</mat-icon>
-  </a>
-  <a
-    mat-icon-button
-    type="button"
-    class="favorite-icon"
-    aria-label="button with bag icon"
-    routerLink="/bag"
-  >
-    <mat-icon>shopping_bag</mat-icon>
-  </a>
-</mat-toolbar>
+<ng-container *ngIf="show">
+  <mat-toolbar color="primary">
+    <button
+      mat-icon-button
+      (click)="sidebar.toggle()"
+      aria-label="button with menu icon"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="spacer"></span>
+    <a class="no-underline" routerLink="/">
+      <h1>{{ title }}</h1>
+    </a>
+    <span class="spacer"></span>
+    <a
+      mat-icon-button
+      type="button"
+      aria-label="button with login icon"
+      routerLink="/login"
+    >
+      <mat-icon>login</mat-icon>
+    </a>
+    <a
+      mat-icon-button
+      type="button"
+      class="favorite-icon"
+      aria-label="button with bag icon"
+      routerLink="/bag"
+    >
+      <mat-icon>shopping_bag</mat-icon>
+    </a>
+  </mat-toolbar>
+</ng-container>

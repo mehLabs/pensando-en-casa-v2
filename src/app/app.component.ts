@@ -16,5 +16,13 @@ export class AppComponent {
       'animation'
     ];
   }
+
+  scrollUp() {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }
   title = 'pec';
 }

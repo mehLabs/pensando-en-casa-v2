@@ -18,35 +18,41 @@
   >
 </div>
 <div class="container mx-auto translate-y-4 md:-translate-y-12">
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
-    <mat-card class="example-card" *ngFor="let article of firstThree(articles)">
-      <mat-card-header>
-        <mat-card-subtitle>{{ article.subtitle }}</mat-card-subtitle>
-        <mat-card-title>{{ article.title }}</mat-card-title>
-      </mat-card-header>
-      <img
-        class="object-contain"
-        mat-card-image
-        height="336"
-        [src]="article.img"
-        alt="Photo of a Shiba Inu"
-      />
-      <mat-card-content>
-        <p class="text-black">{{ article.description }}</p>
-        <mat-divider></mat-divider>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-raised-button color="accent">Comprar</button>
-        <button mat-button>Compartir</button>
-      </mat-card-actions>
-      <mat-card-footer>
-        <!-- <mat-progress-bar mode="indeterminate"></mat-progress-bar> -->
-      </mat-card-footer>
-    </mat-card>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-2">
+    <a
+      class="no-decoration no-underline text-neutral"
+      *ngFor="let article of firstThree(articles)"
+      [routerLink]="'article/' + article.id"
+    >
+      <mat-card>
+        <mat-card-header>
+          <mat-card-subtitle>{{ article.subtitle }}</mat-card-subtitle>
+          <mat-card-title>{{ article.title }}</mat-card-title>
+        </mat-card-header>
+        <img
+          class="object-contain"
+          mat-card-image
+          height="336"
+          [src]="article.img"
+          alt="Photo of a Shiba Inu"
+        />
+        <mat-card-content>
+          <p class="text-black">{{ article.description }}</p>
+          <mat-divider></mat-divider>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="accent">Comprar</button>
+          <button mat-button>Compartir</button>
+        </mat-card-actions>
+        <mat-card-footer>
+          <!-- <mat-progress-bar mode="indeterminate"></mat-progress-bar> -->
+        </mat-card-footer>
+      </mat-card>
+    </a>
   </div>
 </div>
 <div
-  class="grid grid-cols-1 lg:grid-cols-2 container gap-y-4 mx-auto mt-8 mb-4"
+  class="grid grid-cols-1 lg:grid-cols-2 container gap-y-4 mx-auto mt-8 mb-4 overflow-hidden"
 >
   <div class="w-full flex flex-col">
     <div class="flex justify-between items-center px-2">

@@ -1,7 +1,8 @@
-export class Article {
-  title: string | undefined;
-  subtitle: string | undefined;
-  price: number | undefined;
-  description: string | undefined;
-  img: string | undefined;
-}
+export type Article = {
+  id?: number | string;
+  title: string;
+  subtitle: string;
+  price: number;
+  description: string;
+  img: string;
+};
