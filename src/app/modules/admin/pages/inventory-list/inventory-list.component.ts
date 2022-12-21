@@ -32,6 +32,20 @@ export class InventoryListComponent {
     });
   }
 
+  //Buttons
+  add(element: Product) {
+    element.cantidad++;
+  }
+  remove(element: Product) {
+    element.cantidad--;
+  }
+  delete(element: Product) {
+    this.products = this.products.filter(
+      (product) => product.id !== element.id
+    );
+    console.log();
+  }
+
   sorting() {}
 
   columns: Column[];

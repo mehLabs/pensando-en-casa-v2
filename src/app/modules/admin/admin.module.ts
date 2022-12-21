@@ -9,6 +9,7 @@ import { ClientsListComponent } from './pages/clients-list/clients-list.componen
 
 import { SharedModule } from '../shared/shared.module';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { CategoriesListComponent } from './pages/categories-list/categories-list.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     OrdersListComponent,
     ClientsListComponent,
     SearchBarComponent,
+    CategoriesListComponent,
   ],
   imports: [CommonModule, AdminRoutingModule, SharedModule],
 })

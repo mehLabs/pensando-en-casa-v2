@@ -68,7 +68,7 @@ export const adminTransitionAnimations = trigger('routeAnimations', [
       ]),
     ]),
   ]),
-  transition('* => Third', [
+  transition('First => Third', [
     style({ position: 'relative' }),
     query(':enter, :leave', [
       style({
@@ -83,6 +83,66 @@ export const adminTransitionAnimations = trigger('routeAnimations', [
     query(':leave', animateChild()),
     group([
       query(':leave', [animate('300ms ease-out', style({ top: '-100%' }))]),
+      query(':enter', [
+        animate('300ms ease-out', style({ top: '0%', opacity: 1 })),
+      ]),
+    ]),
+  ]),
+  transition('Second => Third', [
+    style({ position: 'relative' }),
+    query(':enter, :leave', [
+      style({
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        overflow: 'hidden',
+      }),
+    ]),
+    query(':enter', [style({ top: '100%', opacity: 0 })]),
+    query(':leave', animateChild()),
+    group([
+      query(':leave', [animate('300ms ease-out', style({ top: '-100%' }))]),
+      query(':enter', [
+        animate('300ms ease-out', style({ top: '0%', opacity: 1 })),
+      ]),
+    ]),
+  ]),
+  transition('* => Last', [
+    style({ position: 'relative' }),
+    query(':enter, :leave', [
+      style({
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        overflow: 'hidden',
+      }),
+    ]),
+    query(':enter', [style({ top: '100%', opacity: 0 })]),
+    query(':leave', animateChild()),
+    group([
+      query(':leave', [animate('300ms ease-out', style({ top: '-100%' }))]),
+      query(':enter', [
+        animate('300ms ease-out', style({ top: '0%', opacity: 1 })),
+      ]),
+    ]),
+  ]),
+  transition('Last => *', [
+    style({ position: 'relative' }),
+    query(':enter, :leave', [
+      style({
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        overflow: 'hidden',
+      }),
+    ]),
+    query(':enter', [style({ top: '-100%', opacity: 0 })]),
+    query(':leave', animateChild()),
+    group([
+      query(':leave', [animate('300ms ease-out', style({ top: '100%' }))]),
       query(':enter', [
         animate('300ms ease-out', style({ top: '0%', opacity: 1 })),
       ]),

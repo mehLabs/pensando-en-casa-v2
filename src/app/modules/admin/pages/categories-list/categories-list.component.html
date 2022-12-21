@@ -1,0 +1,32 @@
+<div class="px-8">
+  <h2>Lista de categorías</h2>
+  <app-search-bar
+    [elements]="categories"
+    (searched)="search($event)"
+  ></app-search-bar>
+  <table mat-table [dataSource]="categories" matSort>
+    <ng-container [matColumnDef]="column.name" *ngFor="let column of columns">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Ordenar por nombre"
+      >
+        <span class="select-none">{{ column.title }}</span>
+      </th>
+      <ng-container *ngIf="column.name !== 'balance'">
+        <td mat-cell *matCellDef="let category">
+          {{ cleanOutput(category[column.name]) }}
+        </td>
+      </ng-container>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="getColumnNames(columns)"></tr>
+    <tr mat-row *matRowDef="let orders; columns: getColumnNames(columns)"></tr>
+  </table>
+  <br />
+  <div class="flex gap-2">
+    <button mat-raised-button color="accent">Agregar categoría</button>
+    <button mat-raised-button color="warn">Eliminar categoría/s</button>
+  </div>
+</div>

@@ -15,7 +15,11 @@
         <span class="select-none">{{ column.title }}</span>
       </th>
       <ng-container
-        *ngIf="column.name !== 'balance' && column.name !== 'price'"
+        *ngIf="
+          column.name !== 'balance' &&
+          column.name !== 'price' &&
+          column.name !== 'btns'
+        "
       >
         <td mat-cell *matCellDef="let element">
           {{ cleanOutput(element[column.name]) }}
@@ -26,6 +30,22 @@
       >
         <td mat-cell *matCellDef="let element">
           {{ cleanOutput(element[column.name]) | arsCurrency }}
+        </td>
+      </ng-container>
+      <ng-container *ngIf="column.name === 'btns'">
+        <td mat-cell *matCellDef="let element">
+          <div class="flex g-1">
+            <button mat-icon-button (click)="remove(element)">
+              <mat-icon>remove</mat-icon>
+            </button>
+            <button mat-icon-button (click)="add(element)">
+              <mat-icon>add</mat-icon>
+            </button>
+
+            <button mat-icon-button color="warn" (click)="delete(element)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
         </td>
       </ng-container>
     </ng-container>

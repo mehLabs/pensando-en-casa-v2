@@ -37,6 +37,7 @@ const columns = [
     name: 'balance',
     title: 'Balance',
   },
+  { name: 'space', title: '' },
 ];
 
 @Injectable({
