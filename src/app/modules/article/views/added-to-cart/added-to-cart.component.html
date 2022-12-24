@@ -1,0 +1,23 @@
+<a
+  routerLink="/"
+  class="absolute top-0 left-0 z-10"
+  color="accent"
+  mat-icon-button
+  aria-label="Volver"
+>
+  <mat-icon>home</mat-icon>
+</a>
+<ng-particles
+  [id]="id"
+  [options]="options"
+  [particlesInit]="particlesInit"
+  (particlesLoaded)="particlesLoaded($event)"
+  class="z-40"
+></ng-particles>
+<div class="z-50 flex w-screen h-screen justify-center items-center flex-wrap">
+  <h2>¡Gracias por su compra!</h2>
+  <a mat-raised-button color="primary" routerLink="/">Seguir viendo</a>
+  <a mat-icon-button routerLink="/bag" color="accent"
+    ><mat-icon>shopping_bag</mat-icon></a
+  >
+</div>

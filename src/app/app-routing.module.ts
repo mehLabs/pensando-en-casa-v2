@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BagComponent } from './pages/bag/bag.component';
-import { LoginComponent } from './pages/login/login.component';
 import { MainComponent } from './pages/main/main.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent, data: { animation: 'ToRight' } },
   {
     path: 'admin',
     loadChildren: () =>
@@ -19,6 +17,12 @@ const routes: Routes = [
     path: 'article/:articleId',
     loadChildren: () =>
       import('./modules/article/article.module').then((m) => m.ArticleModule),
+  },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./modules/login/login.module').then((m) => m.LoginModule),
+    data: { animation: 'ToRight' },
   },
   {
     path: '**',

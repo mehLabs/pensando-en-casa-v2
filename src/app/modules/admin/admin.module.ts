@@ -10,6 +10,7 @@ import { ClientsListComponent } from './pages/clients-list/clients-list.componen
 import { SharedModule } from '../shared/shared.module';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { CategoriesListComponent } from './pages/categories-list/categories-list.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,6 @@ import { CategoriesListComponent } from './pages/categories-list/categories-list
     SearchBarComponent,
     CategoriesListComponent,
   ],
-  imports: [CommonModule, AdminRoutingModule, SharedModule],
+  imports: [CommonModule, AdminRoutingModule, SharedModule, MatTableModule],
 })
 export class AdminModule {}
