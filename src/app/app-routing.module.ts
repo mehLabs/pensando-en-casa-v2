@@ -25,6 +25,14 @@ const routes: Routes = [
     data: { animation: 'ToRight' },
   },
   {
+    data: { animation: 'ToRight' },
+    path: 'articles',
+    loadChildren: () =>
+      import('./modules/articles/articles.module').then(
+        (m) => m.ArticlesModule
+      ),
+  },
+  {
     path: '**',
     pathMatch: 'full',
     component: PageNotFoundComponent,

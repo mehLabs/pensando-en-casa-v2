@@ -43,4 +43,9 @@ export class MainComponent implements OnInit {
     }
     return array;
   }
+
+  getItemsIds(items: any[]) {
+    const ids = items.map((item) => item.id);
+    return ids;
+  }
 }

@@ -4,5 +4,5 @@ export type Article = {
   subtitle: string;
   price: number;
   description: string;
-  img: string;
+  imgs: string[];
 };

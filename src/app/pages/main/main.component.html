@@ -33,7 +33,7 @@
           class="object-contain"
           mat-card-image
           height="336"
-          [src]="article.img"
+          [src]="article.imgs[0]"
           alt="Photo of a Shiba Inu"
         />
         <mat-card-content>
@@ -56,8 +56,17 @@
 >
   <div class="w-full flex flex-col">
     <div class="flex justify-between items-center px-2">
-      <h4>Más vendidos</h4>
-      <button mat-button color="accent" class="text">Ver más</button>
+      <a routerLink="/articles" [queryParams]="{ ids: getItemsIds(articles) }">
+        <h4>Más vendidos</h4>
+      </a>
+      <a
+        routerLink="/articles"
+        [queryParams]="{ ids: getItemsIds(articles) }"
+        mat-button
+        color="accent"
+        class="text"
+        >Ver más</a
+      >
     </div>
     <app-carousel [incommingArticles]="articles"></app-carousel>
   </div>

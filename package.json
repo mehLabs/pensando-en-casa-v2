@@ -24,10 +24,11 @@
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
     "canvas-confetti": "^1.6.0",
-    "ng-particles": "^3.7.0",
+    "ng-particles": "^3.7.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "tsparticles": "^2.7.0",
+    "tsparticles-engine": "^2.7.1",
     "tsparticles-shape-confetti": "^1.14.2",
     "zone.js": "~0.12.0"
   },

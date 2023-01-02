@@ -7,33 +7,76 @@
 >
   <mat-icon>arrow_back</mat-icon>
 </a>
+<button
+  class="absolute top-0 right-0 z-10"
+  color="primary"
+  mat-icon-button
+  aria-label="Volver"
+  (click)="bookmark()"
+>
+  <mat-icon *ngIf="bookmarked">bookmark</mat-icon>
+  <mat-icon *ngIf="!bookmarked">bookmark_outline</mat-icon>
+</button>
 
-<div class="grid grid-cols-1 md:grid-cols-[1fr_200px] -mb-8">
-  <div class="overflow-hidden w-full" *ngIf="article">
-    <div class="bg-white relative -z-50">
-      <img class="fixed -z-40 w-full" [src]="article.img" />
-      <div class="h-96 md:h-screen"></div>
+<div class="grid grid-cols-1 -mb-8">
+  <div class="w-full" *ngIf="article">
+    <div
+      class="bg-white relative min-h-[20rem] flex items-center justify-center"
+      [ngStyle]="{ 'height.px': maxHeight }"
+    >
+      <img
+        class="w-full max-h-screen object-contain"
+        [src]="article.selected"
+      />
       <!-- <div
         class="bg-fixed bg-contain bg-no-repeat bg-top relative h-96 md:h-screen z-0"
         [style.background-image]="'url(' + article.img + ')'"
       ></div> -->
     </div>
     <div
-      class="bg-neutral h-full -translate-y-8 rounded-t-lg z-[11] relative pt-4 px-4 text-center"
+      class="bg-neutral h-fullrounded-t-lg z-[11] relative pt-4 text-center mb-4"
     >
+      <div class="flex justify-center w-full">
+        <div class="flex gap-2 overflow-x-auto">
+          <button
+            mat-raised-button
+            color=""
+            *ngFor="let image of article.imgs"
+            (click)="selectImage(image)"
+          >
+            <img [src]="image" height="30px" aria-label="Image of product" />
+          </button>
+        </div>
+      </div>
       <h2>{{ article.price | arsCurrency }}</h2>
       <h3>{{ article.title }}</h3>
       <p>
         {{ article.description }}
       </p>
-      <a mat-flat-button color="accent" routerLink="added">
-        <mat-icon>credit_card</mat-icon>
-        COMPRAR
-      </a>
+      <div class="flex gap-2 w-full justify-center flex-wrap">
+        <a
+          mat-flat-button
+          class="no-underline"
+          color="accent"
+          [routerLink]="'/buy/' + article.id"
+        >
+          <mat-icon>credit_card</mat-icon>
+          COMPRAR
+        </a>
+        <a
+          mat-flat-button
+          class="no-underline"
+          color="accent"
+          routerLink="added"
+        >
+          <mat-icon>shopping_bag_outline</mat-icon>
+          Agregar a la bolsa
+        </a>
+      </div>
     </div>
   </div>
   <aside
-    class="border-0 border-x border-solid border-border flex md:flex-col md:overflow-hidden overflow-x-scroll bg-white"
+    class="gap-2 border-0 border-x border-solid border-border flex md:overflow-hidden overflow-x-scroll bg-white"
   >
     <mat-card
       *ngFor="let article of articles"
@@ -52,7 +95,7 @@
           [ngClass]="sm ? 'object-cover' : 'object-contain'"
           mat-card-image
           [height]="mobile ? 150 : 150"
-          [src]="article.img"
+          [src]="article.imgs[0]"
           alt="Photo of a Shiba Inu"
         />
       </a>
