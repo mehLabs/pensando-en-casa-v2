@@ -1,17 +1,19 @@
 <app-header [sidebar]="sidebar"></app-header>
 <mat-sidenav-container class="no-bg">
   <mat-sidenav
-    class="no-bg borderc"
+    class="no-bg border-0 fixed top-16 left-0"
     #sidebar
     mode="side"
     (keydown.escape)="sidebar.close()"
   >
-    <app-sidebar></app-sidebar>
+    <app-sidebar class=""></app-sidebar>
   </mat-sidenav>
   <mat-sidenav-content>
-    <div class="min-h-screen" [@routeAnimations]="getRouteAnimationData()">
-      <router-outlet (activate)="scrollUp()"></router-outlet>
+    <div class="flex flex-col overflow-hidden w-screen">
+      <div class="min-h-screen" [@routeAnimations]="getRouteAnimationData()">
+        <router-outlet (activate)="scrollUp()"></router-outlet>
+      </div>
+      <app-footer></app-footer>
     </div>
-    <app-footer></app-footer>
   </mat-sidenav-content>
 </mat-sidenav-container>

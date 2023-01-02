@@ -1,12 +1,15 @@
 <ng-container *ngIf="show">
   <mat-toolbar color="primary">
     <button
-      mat-icon-button
+      class="z-[999] fixed"
+      mat-mini-fab
+      color="primary"
       (click)="sidebar.toggle()"
       aria-label="button with menu icon"
     >
       <mat-icon>menu</mat-icon>
     </button>
+    <span class="h-12 w-12"></span>
     <span class="spacer"></span>
     <a class="no-underline" routerLink="/">
       <h1>{{ title }}</h1>

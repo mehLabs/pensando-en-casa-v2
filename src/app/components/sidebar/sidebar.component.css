@@ -1,6 +1,8 @@
 .no-decoration {
   list-style: none;
 }
-ul li button {
+ul li button,
+ul li a {
   color: var(--text);
+  text-decoration: none;
 }

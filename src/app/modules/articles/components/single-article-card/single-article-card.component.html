@@ -1,14 +1,18 @@
 <mat-card>
-  <mat-card-header>
-    <mat-card-subtitle>{{ article.subtitle }}</mat-card-subtitle>
-    <mat-card-title>{{ article.title }}</mat-card-title>
-  </mat-card-header>
+  <a [routerLink]="'/article/' + article.id" class="no-underline text-black">
+    <mat-card-header>
+      <mat-card-subtitle>{{ article.subtitle }}</mat-card-subtitle>
+      <mat-card-title>{{ article.title }}</mat-card-title>
+    </mat-card-header>
+  </a>
+
   <img
     class="object-contain"
     mat-card-image
     height="336"
     [src]="article.imgs[0]"
     alt="Photo of a Shiba Inu"
+    (click)="goToLink('article/' + article.id)"
   />
   <mat-card-content>
     <p class="text-black">{{ article.description }}</p>

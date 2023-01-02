@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Article } from 'src/app/models/article';
 
 @Component({
@@ -15,4 +16,10 @@ export class SingleArticleCardComponent {
     description: '',
     imgs: [],
   };
+
+  constructor(private router: Router) {}
+
+  goToLink(link: string) {
+    this.router.navigateByUrl(link);
+  }
 }
