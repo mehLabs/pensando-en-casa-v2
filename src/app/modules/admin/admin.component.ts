@@ -6,10 +6,12 @@ import { adminTransitionAnimations } from './admin-transition-animations';
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css'],
-  animations: [adminTransitionAnimations],
+  animations: [],
 })
 export class AdminComponent {
   constructor(private contexts: ChildrenOutletContexts) {}
+
+  expanded: boolean = true;
 
   links: any[] = [
     { title: 'Órdenes', link: 'orders', icon: 'local_shipping' },
@@ -30,5 +32,9 @@ export class AdminComponent {
     return this.contexts.getContext('primary')?.route?.snapshot?.data?.[
       'animation'
     ];
+  }
+
+  toggle() {
+    this.expanded = !this.expanded;
   }
 }

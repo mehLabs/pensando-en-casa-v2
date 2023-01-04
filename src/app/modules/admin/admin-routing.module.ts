@@ -10,27 +10,22 @@ const routes: Routes = [
   {
     path: '',
     component: AdminComponent,
-    data: { animation: 'ToRight' },
     children: [
       {
         path: 'clients',
         component: ClientsListComponent,
-        data: { animation: 'Third' },
       },
       {
         path: 'inventory',
         component: InventoryListComponent,
-        data: { animation: 'Second' },
       },
       {
         path: 'orders',
         component: OrdersListComponent,
-        data: { animation: 'First' },
       },
       {
         path: 'categories',
         component: CategoriesListComponent,
-        data: { animation: 'Last' },
       },
     ],
   },

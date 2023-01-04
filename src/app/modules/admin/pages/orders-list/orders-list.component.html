@@ -63,9 +63,13 @@
         <span class="select-none">¿Entregado?</span>
       </th>
       <td mat-cell *matCellDef="let element">
-        {{ element.delivered | yesNo }}
-        <button mat-raised-button class="ml-1" color="accent">Entregar</button>
-        <button mat-raised-button class="ml-1" color="warn">Cancelar</button>
+        <div class="flex flex-nowrap items-center">
+          {{ element.delivered | yesNo }}
+          <button mat-raised-button class="ml-1" color="accent">
+            Entregar
+          </button>
+          <button mat-raised-button class="ml-1" color="warn">Cancelar</button>
+        </div>
       </td>
     </ng-container>
 

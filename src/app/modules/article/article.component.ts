@@ -1,7 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Article } from 'src/app/models/article';
 import { ArticlesService } from 'src/app/services/articles.service';
+import { BagService } from 'src/app/services/bag.service';
 import { ResponsiveService } from 'src/app/services/responsive.service';
 
 type ViewArticle = Article & { selected: string };
@@ -34,7 +35,9 @@ export class ArticleComponent implements OnDestroy, OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private articleService: ArticlesService,
-    private uiService: ResponsiveService
+    private uiService: ResponsiveService,
+    private router: Router,
+    private bagService: BagService
   ) {
     articleService
       .getArticles()
@@ -53,6 +56,12 @@ export class ArticleComponent implements OnDestroy, OnInit {
 
   ngOnInit(): void {
     this.subscribeRouteChange();
+  }
+
+  addToBag() {
+    this.bagService.addToBag(this.articleId);
+    const url = this.router.url;
+    this.router.navigateByUrl(url + '/added');
   }
 
   ngOnDestroy(): void {
@@ -104,7 +113,7 @@ export class ArticleComponent implements OnDestroy, OnInit {
         title: 'Artículo inexistente',
       };
 
-      this.article = { ...article, selected: article.imgs[0] };
+      this.article = { ...article, id: -1, selected: article.imgs[0] };
       this.getMaxHeight(article.imgs);
 
       this.uiService.scrollUp();

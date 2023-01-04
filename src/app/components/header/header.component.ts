@@ -1,4 +1,6 @@
-import { Component, HostListener, Input } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { MatBadge } from '@angular/material/badge';
+import { BagService } from 'src/app/services/bag.service';
 import { ResponsiveService } from 'src/app/services/responsive.service';
 
 @Component({
@@ -6,14 +8,20 @@ import { ResponsiveService } from 'src/app/services/responsive.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   @Input() sidebar: any;
   show: boolean = true;
 
   title = 'Pensando en casa';
   breakpoint: number = 400;
 
-  constructor(private responsiveService: ResponsiveService) {
+  quantItems = 0;
+  badge = 2;
+
+  constructor(
+    private responsiveService: ResponsiveService,
+    private bag: BagService
+  ) {
     responsiveService.innerWidth().subscribe((width) => {
       if (width < this.breakpoint) {
         this.title = 'PEC';
@@ -22,5 +30,10 @@ export class HeaderComponent {
       }
     });
     responsiveService.isShowHeader().subscribe((show) => (this.show = show));
+  }
+
+  ngOnInit(): void {
+    this.quantItems = this.bag.getAllItems().length;
+    console.log(this.quantItems);
   }
 }

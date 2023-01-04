@@ -3,14 +3,24 @@
     src="https://firebasestorage.googleapis.com/v0/b/pec-2-c5887.appspot.com/o/solid-wood-furniture-manufacturer.jpg?alt=media"
     class="max-h-screen-5 w-full object-cover"
   />
-  <a
-    mat-raised-button
-    color="primary"
-    class="slighly-up ml-12 text-3xl lg:text-5xl sm:h-17 lg:h-20 appear modern"
-    routerLink="/articles"
-  >
-    <span>Ver catálogo</span> <mat-icon>arrow_forward_ios</mat-icon>
-  </a>
+  <div class="flex flex-wrap absolute top-32 sm:top-40 md:top-48 lg:top-72">
+    <a
+      mat-raised-button
+      color="primary"
+      class="ml-12 text-3xl lg:text-5xl sm:h-17 lg:h-20 appear modern no-underline"
+      routerLink="/articles"
+    >
+      <span>Ver catálogo</span> <mat-icon>arrow_forward_ios</mat-icon>
+    </a>
+    <a
+      mat-raised-button
+      color="accent"
+      class="ml-12 text-3xl lg:text-5xl lg:h-20 appear modern no-underline"
+      href="https://api.whatsapp.com/send/?phone=542915204376&text=Hola%2C+pensando+en+casa.+Tengo+una+consulta.&type=phone_number&app_absent=0"
+    >
+      <span>Whatsapp</span> <mat-icon>arrow_forward_ios</mat-icon>
+    </a>
+  </div>
   <span class="lg:text-7xl text-3xl sm:text-4xl text cursive subtitle"
     >{{ subtitle }}<span class="animate-flicker">|</span></span
   >

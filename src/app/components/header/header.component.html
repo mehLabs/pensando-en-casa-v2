@@ -24,12 +24,18 @@
       <mat-icon>login</mat-icon>
     </a>
     <a
+      id="bag-btn"
       mat-icon-button
       type="button"
-      class="favorite-icon"
+      class="favorite-icon text-xs"
       aria-label="button with bag icon"
       routerLink="/bag"
     >
+      <span
+        class="right-1 top-2 absolute badge bg-accent text-black rounded-full flex items-center justify-center w-[16px] h-[16px ]"
+        *ngIf="badge > 0"
+        >{{ badge }}</span
+      >
       <mat-icon>shopping_bag</mat-icon>
     </a>
   </mat-toolbar>

@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { Article } from 'src/app/models/article';
 
 @Component({
-  selector: 'app-single-article-card',
-  templateUrl: './single-article-card.component.html',
-  styleUrls: ['./single-article-card.component.css'],
+  selector: 'app-article-card',
+  templateUrl: './article-card.component.html',
+  styleUrls: ['./article-card.component.css'],
 })
-export class SingleArticleCardComponent {
+export class ArticleCardComponent {
   @Input() article: Article = {
     id: 0,
     title: 'No existe',
@@ -16,6 +16,7 @@ export class SingleArticleCardComponent {
     description: '',
     imgs: [],
   };
+  @Input() actions: boolean = true;
 
   constructor(private router: Router) {}
 

@@ -19,3 +19,7 @@ mat-toolbar {
   left: 0;
   right: 0;
 }
+
+.mat-badge-active {
+  transform: translateX(-115px);
+}

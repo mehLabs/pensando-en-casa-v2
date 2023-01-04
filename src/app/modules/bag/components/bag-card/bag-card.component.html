@@ -1,0 +1,33 @@
+<mat-card class="grid grid-cols-[64px_150px_1fr]">
+  <button
+    (click)="removeItem()"
+    mat-raised-button
+    class="h-full flex"
+    color="warn"
+  >
+    <mat-icon class="m-auto">delete_outlined</mat-icon>
+  </button>
+  <div class="flex items-center">
+    <img
+      class="object-contain cursor-pointer"
+      mat-card-image
+      width="150"
+      [src]="article.imgs[0]"
+      alt="Photo of a Shiba Inu"
+      (click)="goToLink('article/' + article.id)"
+    />
+  </div>
+  <div class="flex flex-col justify-between">
+    <a [routerLink]="'/article/' + article.id" class="no-underline text-black">
+      <mat-card-header>
+        <mat-card-title>{{ article.title }}</mat-card-title>
+      </mat-card-header>
+    </a>
+    <mat-card-footer class="p-4">
+      <mat-card-subtitle class="flex items-baseline"
+        ><span class="text-black whitespace-nowrap">$</span>
+        <span class="text-3xl">{{ article.price }}</span></mat-card-subtitle
+      >
+    </mat-card-footer>
+  </div>
+</mat-card>

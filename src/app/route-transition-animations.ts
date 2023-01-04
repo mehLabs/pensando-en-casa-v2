@@ -22,9 +22,11 @@ export const routeTransitionAnimations = trigger('routeAnimations', [
     query(':enter', [style({ left: '-100%', opacity: 0 })]),
     query(':leave', animateChild(), { optional: true }),
     group([
-      query(':leave', [
-        animate('300ms ease-out', style({ left: '100%', opacity: 0 })),
-      ]),
+      query(
+        ':leave',
+        [animate('300ms ease-out', style({ left: '100%', opacity: 0 }))],
+        { optional: true }
+      ),
       query(':enter', [
         animate('300ms ease-out', style({ left: '0%', opacity: 1 })),
       ]),

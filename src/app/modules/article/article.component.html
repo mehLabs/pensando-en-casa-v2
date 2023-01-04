@@ -40,6 +40,7 @@
         <div class="flex gap-2 overflow-x-auto">
           <button
             mat-raised-button
+            class="overflow-hidden"
             color=""
             *ngFor="let image of article.imgs"
             (click)="selectImage(image)"
@@ -63,27 +64,27 @@
           <mat-icon>credit_card</mat-icon>
           COMPRAR
         </a>
-        <a
+        <button
           mat-flat-button
           class="no-underline"
           color="accent"
-          routerLink="added"
+          (click)="addToBag()"
         >
           <mat-icon>shopping_bag_outline</mat-icon>
           Agregar a la bolsa
-        </a>
+        </button>
       </div>
     </div>
   </div>
   <aside
-    class="gap-2 border-0 border-x border-solid border-border flex md:overflow-hidden overflow-x-scroll bg-white"
+    class="gap-2 border-0 border-x border-solid border-border flex overflow-x-scroll bg-white mb-4"
   >
     <mat-card
       *ngFor="let article of articles"
-      class="border-r border-solid border-border mt-1 h-[200px]"
+      class="border-r border-solid border-border mt-1 h-[200px] flex"
     >
       <a
-        class="no-decoration no-underline text-black flex flex-col overflow-hidden"
+        class="no-decoration no-underline text-black flex flex-col overflow-hidden w-[200px]"
         [routerLink]="'/article/' + article.id"
       >
         <mat-card-header>
@@ -91,10 +92,9 @@
           <mat-card-title>{{ article.title }}</mat-card-title>
         </mat-card-header>
         <img
-          class="block object-top"
-          [ngClass]="sm ? 'object-cover' : 'object-contain'"
+          class="block object-top object-contain my-auto"
           mat-card-image
-          [height]="mobile ? 150 : 150"
+          [height]="150"
           [src]="article.imgs[0]"
           alt="Photo of a Shiba Inu"
         />

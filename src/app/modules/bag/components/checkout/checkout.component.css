@@ -1,0 +1,8 @@
+.appear-up {
+  transition: all 1s;
+  transform: translateY(0);
+}
+.dissapear {
+  transition: all 3s;
+  transform: translateY(100%);
+}

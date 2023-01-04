@@ -20,9 +20,11 @@ export const adminTransitionAnimations = trigger('routeAnimations', [
       }),
     ]),
     query(':enter', [style({ top: '-100%', opacity: 0 })]),
-    query(':leave', animateChild()),
+    query(':leave', animateChild(), { optional: true }),
     group([
-      query(':leave', [animate('300ms ease-out', style({ top: '100%' }))]),
+      query(':leave', [animate('300ms ease-out', style({ top: '100%' }))], {
+        optional: true,
+      }),
       query(':enter', [
         animate('300ms ease-out', style({ top: '0%', opacity: 1 })),
       ]),
@@ -40,9 +42,11 @@ export const adminTransitionAnimations = trigger('routeAnimations', [
       }),
     ]),
     query(':enter', [style({ top: '100%', opacity: 0 })]),
-    query(':leave', animateChild()),
+    query(':leave', animateChild(), { optional: true }),
     group([
-      query(':leave', [animate('300ms ease-out', style({ top: '-100%' }))]),
+      query(':leave', [animate('300ms ease-out', style({ top: '-100%' }))], {
+        optional: true,
+      }),
       query(':enter', [
         animate('300ms ease-out', style({ top: '0%', opacity: 1 })),
       ]),
@@ -60,9 +64,11 @@ export const adminTransitionAnimations = trigger('routeAnimations', [
       }),
     ]),
     query(':enter', [style({ top: '-100%', opacity: 0 })]),
-    query(':leave', animateChild()),
+    query(':leave', animateChild(), { optional: true }),
     group([
-      query(':leave', [animate('300ms ease-out', style({ top: '100%' }))]),
+      query(':leave', [animate('300ms ease-out', style({ top: '100%' }))], {
+        optional: true,
+      }),
       query(':enter', [
         animate('300ms ease-out', style({ top: '0%', opacity: 1 })),
       ]),
@@ -80,9 +86,11 @@ export const adminTransitionAnimations = trigger('routeAnimations', [
       }),
     ]),
     query(':enter', [style({ top: '100%', opacity: 0 })]),
-    query(':leave', animateChild()),
+    query(':leave', animateChild(), { optional: true }),
     group([
-      query(':leave', [animate('300ms ease-out', style({ top: '-100%' }))]),
+      query(':leave', [animate('300ms ease-out', style({ top: '-100%' }))], {
+        optional: true,
+      }),
       query(':enter', [
         animate('300ms ease-out', style({ top: '0%', opacity: 1 })),
       ]),
@@ -100,9 +108,11 @@ export const adminTransitionAnimations = trigger('routeAnimations', [
       }),
     ]),
     query(':enter', [style({ top: '100%', opacity: 0 })]),
-    query(':leave', animateChild()),
+    query(':leave', animateChild(), { optional: true }),
     group([
-      query(':leave', [animate('300ms ease-out', style({ top: '-100%' }))]),
+      query(':leave', [animate('300ms ease-out', style({ top: '-100%' }))], {
+        optional: true,
+      }),
       query(':enter', [
         animate('300ms ease-out', style({ top: '0%', opacity: 1 })),
       ]),
@@ -120,9 +130,11 @@ export const adminTransitionAnimations = trigger('routeAnimations', [
       }),
     ]),
     query(':enter', [style({ top: '100%', opacity: 0 })]),
-    query(':leave', animateChild()),
+    query(':leave', animateChild(), { optional: true }),
     group([
-      query(':leave', [animate('300ms ease-out', style({ top: '-100%' }))]),
+      query(':leave', [animate('300ms ease-out', style({ top: '-100%' }))], {
+        optional: true,
+      }),
       query(':enter', [
         animate('300ms ease-out', style({ top: '0%', opacity: 1 })),
       ]),
@@ -140,9 +152,11 @@ export const adminTransitionAnimations = trigger('routeAnimations', [
       }),
     ]),
     query(':enter', [style({ top: '-100%', opacity: 0 })]),
-    query(':leave', animateChild()),
+    query(':leave', animateChild(), { optional: true }),
     group([
-      query(':leave', [animate('300ms ease-out', style({ top: '100%' }))]),
+      query(':leave', [animate('300ms ease-out', style({ top: '100%' }))], {
+        optional: true,
+      }),
       query(':enter', [
         animate('300ms ease-out', style({ top: '0%', opacity: 1 })),
       ]),

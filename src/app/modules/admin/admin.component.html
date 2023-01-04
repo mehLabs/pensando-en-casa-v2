@@ -1,6 +1,19 @@
-<div class="grid grid-cols-[1fr_3fr] min-h-screen">
-  <aside class="sidebar border-solid border-0 border-r border-border h-full">
+<div
+  class="flex min-h-screen transition ease-in-out delay-[250] overflow-hidden"
+>
+  <!-- [ngClass]="expanded ? 'grid-cols-[150px_1fr]' : 'grid-cols-[56px_1fr]'" -->
+  <aside
+    class="sidebar border-solid border-0 border-r border-border"
+    [ngClass]="expanded ? 'expand' : 'shrink'"
+  >
     <ul class="list-none p-0">
+      <li class="flex items-center shrink-0">
+        <button mat-icon-button class="mr-auto" (click)="toggle()">
+          <mat-icon class="text">{{
+            expanded ? "first_page" : "last_page"
+          }}</mat-icon>
+        </button>
+      </li>
       <li class="flex items-center shrink-0" *ngFor="let link of links">
         <a
           class="h-16 w-full flex items-center py-2 px-4 no-underline text"
@@ -16,14 +29,14 @@
           >
             <path fill="#ffddb6" [attr.d]="link.svg" />
           </svg>
-          <span class="ml-1">
+          <span class="ml-1" *ngIf="expanded">
             {{ link.title }}
           </span>
         </a>
       </li>
     </ul>
   </aside>
-  <div [@routeAnimations]="getRouteAnimationData()">
+  <div class="overflow-auto" [ngClass]="expanded ? '' : ''">
     <router-outlet></router-outlet>
   </div>
 </div>

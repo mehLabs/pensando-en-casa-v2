@@ -7,7 +7,7 @@
   </a>
 
   <img
-    class="object-contain"
+    class="object-contain cursor-pointer"
     mat-card-image
     height="336"
     [src]="article.imgs[0]"
@@ -18,7 +18,7 @@
     <p class="text-black">{{ article.description }}</p>
     <mat-divider></mat-divider>
   </mat-card-content>
-  <mat-card-actions>
+  <mat-card-actions *ngIf="actions">
     <a mat-raised-button color="accent" [routerLink]="'/article/' + article.id"
       >Comprar</a
     >

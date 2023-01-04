@@ -6,49 +6,36 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 // Material Navigation
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
 // Material Layout
-import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 // Material Buttons & Indicators
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
 // Material Popups & Modals
 // Material Data tables
-import { ArsCurrencyPipe } from 'src/app/pipes/ars-currency.pipe';
-import { YesNoPipe } from 'src/app/pipes/yes-no.pipe';
+import { SnackComponent } from './snack/snack.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatChipsModule } from '@angular/material/chips';
 
 // Pipes
 
 @NgModule({
-  declarations: [ArsCurrencyPipe, YesNoPipe],
+  declarations: [SnackComponent],
   imports: [
-    MatButtonModule,
     FormsModule,
     CommonModule,
     MatAutocompleteModule,
     MatInputModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatCardModule,
     MatListModule,
-    MatIconModule,
     ReactiveFormsModule,
+    MatSnackBarModule,
+    MatChipsModule,
   ],
   exports: [
-    MatButtonModule,
-    YesNoPipe,
-    ArsCurrencyPipe,
     MatAutocompleteModule,
     MatInputModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatCardModule,
     MatListModule,
-    MatIconModule,
     ReactiveFormsModule,
     FormsModule,
+    MatChipsModule,
   ],
 })
 export class SharedModule {}

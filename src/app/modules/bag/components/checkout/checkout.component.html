@@ -1,0 +1,28 @@
+<div class="inputs" [ngClass]="checkout ? 'appear-up' : 'dissapear'">
+  <form>
+    <mat-form-field appearance="fill" color="primary" class="w-full">
+      <mat-label>Nombre</mat-label>
+      <input matInput id="name" placeholder="Nombre" />
+    </mat-form-field>
+    <mat-form-field class="w-full">
+      <input matInput id="surname" placeholder="Apellido" />
+    </mat-form-field>
+    <mat-form-field class="w-full">
+      <input matInput id="address" placeholder="Dirección de entrega" />
+    </mat-form-field>
+    <mat-form-field class="w-full">
+      <input matInput id="phone" placeholder="Teléfono" />
+    </mat-form-field>
+    <mat-chip-listbox
+      aria-label="Selección de forma de pago"
+      class="w-full mat-mdc-chip-set-stacked mb-2 px-2 box-border"
+    >
+      <mat-label>Forma de pago</mat-label>
+      <mat-chip-option>Efectivo, en persona</mat-chip-option>
+      <mat-chip-option>MercadoPago</mat-chip-option>
+    </mat-chip-listbox>
+    <button type="submit" mat-raised-button color="accent" class="w-full">
+      Siguiente
+    </button>
+  </form>
+</div>
